@@ -1,20 +1,22 @@
 import "./App.css";
-import Dot from "./components/dot/dot";
+import Dots from "./components/dot/dots";
 import Svg from "./components/svg/svg";
 import { grid as g } from "./utils";
 
 const corners = [0.3, 0.7];
+const dots = [
+  [g(corners[0]), g(corners[0])],
+  [g(corners[0]), g(corners[1])],
+  [g(corners[1]), g(corners[0])],
+  [g(corners[1]), g(corners[1])],
+];
 
 function App() {
   return (
     <main>
       <div className="grid">
         <Svg>
-          {/* Change these */}
-          <Dot x={g(corners[0])} y={g(corners[0])} />
-          <Dot x={g(corners[0])} y={g(corners[1])} />
-          <Dot x={g(corners[1])} y={g(corners[0])} />
-          <Dot x={g(corners[1])} y={g(corners[1])} />
+          <Dots coordinates={dots} />
         </Svg>
       </div>
     </main>

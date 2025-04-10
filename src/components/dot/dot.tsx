@@ -1,3 +1,4 @@
+import defaults from "./defaults";
 import "./dot.css";
 
 type DotProps = {
@@ -11,9 +12,9 @@ type DotProps = {
 export default function Dot({
   x,
   y,
-  radius = 4,
-  stroke = 2,
-  color = "#faa",
+  radius = defaults.radius,
+  stroke = defaults.stroke,
+  color = defaults.color,
 }: DotProps) {
   return (
     <circle cx={x} cy={y} r={radius} strokeWidth={stroke} stroke={color} />
