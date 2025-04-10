@@ -1,7 +1,7 @@
-import "./App.css";
 import Dots from "./components/dot/dots";
+import Grid from "./components/grid/grid";
 import Svg from "./components/svg/svg";
-import { Point, createPoint } from "./utils";
+import { Point, createPoint } from "./lib/point";
 
 const corner = 0.25;
 const p = createPoint();
@@ -11,7 +11,7 @@ const q = Point.mirrorX(p);
 const r = Point.mirrorY(q);
 const s = Point.mirrorX(r);
 
-const dots = [
+const dots: [number, number][] = [
   [p.x, p.y],
   [q.x, q.y],
   [r.x, r.y],
@@ -20,13 +20,11 @@ const dots = [
 
 function App() {
   return (
-    <main>
-      <div className="grid">
-        <Svg>
-          <Dots coordinates={dots} />
-        </Svg>
-      </div>
-    </main>
+    <Grid showLines={true}>
+      <Svg>
+        <Dots coordinates={dots} />
+      </Svg>
+    </Grid>
   );
 }
 

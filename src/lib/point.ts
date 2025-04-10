@@ -1,4 +1,4 @@
-const GRID_SIZE = 640;
+import { gridSize } from "./constants";
 
 export const createPoint = (x = 0, y = 0): Point => {
   return new Point().at(x, y);
@@ -19,11 +19,11 @@ export class Point {
   }
 
   static mirrorX(p: Point): Point {
-    return new Point().at(Math.abs(GRID_SIZE - p.x), p.y);
+    return new Point().at(Math.abs(gridSize - p.x), p.y);
   }
 
   static mirrorY(p: Point): Point {
-    return new Point().at(p.x, Math.abs(GRID_SIZE - p.y));
+    return new Point().at(p.x, Math.abs(gridSize - p.y));
   }
 
   get x() {
@@ -61,8 +61,8 @@ export class Point {
   }
 
   atRelative(x: number, y: number): Point {
-    this.x = GRID_SIZE * x;
-    this.y = GRID_SIZE * y;
+    this.x = gridSize * x;
+    this.y = gridSize * y;
     return this;
   }
 
@@ -73,8 +73,8 @@ export class Point {
   }
 
   moveRelative(x: number, y: number): Point {
-    this.x += GRID_SIZE * x;
-    this.y += GRID_SIZE * y;
+    this.x += gridSize * x;
+    this.y += gridSize * y;
     return this;
   }
 }

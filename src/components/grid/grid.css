@@ -1,13 +1,7 @@
-#root {
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
-
 main {
   /* Don't actually change this! */
   /* the ts utils rely on it being constant*/
-  --grid-size: 640px;
+  /*--grid-size: 640px;*/
 
   height: 100%;
   min-width: 100%;
@@ -17,11 +11,13 @@ main {
 }
 
 .grid {
-  --grid-count: 20;
+  /*--grid-count: 20;*/
   height: var(--grid-size);
   width: var(--grid-size);
   position: relative;
+}
 
+.lines {
   background-image: linear-gradient(to right, #444 1px, transparent 1px),
     linear-gradient(to bottom, #444 1px, transparent 1px);
   background-size: calc(calc(var(--grid-size) - 1px) / var(--grid-count))
