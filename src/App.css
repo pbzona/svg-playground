@@ -5,6 +5,8 @@
 }
 
 main {
+  /* Don't actually change this! */
+  /* the ts utils rely on it being constant*/
   --grid-size: 640px;
 
   height: 100%;
