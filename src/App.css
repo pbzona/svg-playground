@@ -17,13 +17,13 @@ main {
 }
 
 .grid {
-  --grid-count: 10;
+  --grid-count: 20;
   height: var(--grid-size);
   width: var(--grid-size);
   position: relative;
 
-  background-image: linear-gradient(to right, #555 1px, transparent 1px),
-    linear-gradient(to bottom, #555 1px, transparent 1px);
+  background-image: linear-gradient(to right, #444 1px, transparent 1px),
+    linear-gradient(to bottom, #444 1px, transparent 1px);
   background-size: calc(calc(var(--grid-size) - 1px) / var(--grid-count))
     calc(calc(var(--grid-size) - 1px) / var(--grid-count));
 }
