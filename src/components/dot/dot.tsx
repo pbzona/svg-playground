@@ -1,22 +1,18 @@
+import type { StrokeProps } from "../../lib/stroke";
 import defaults from "./defaults";
-import "./dot.css";
 
-type DotProps = {
+type DotProps = StrokeProps & {
   x: number;
   y: number;
   radius?: number;
-  stroke?: number;
-  color?: string;
 };
 
 export default function Dot({
   x,
   y,
   radius = defaults.radius,
-  stroke = defaults.stroke,
+  width = defaults.stroke,
   color = defaults.color,
 }: DotProps) {
-  return (
-    <circle cx={x} cy={y} r={radius} strokeWidth={stroke} stroke={color} />
-  );
+  return <circle cx={x} cy={y} r={radius} strokeWidth={width} stroke={color} />;
 }
